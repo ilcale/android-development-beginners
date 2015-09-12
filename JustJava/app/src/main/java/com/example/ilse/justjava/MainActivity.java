@@ -13,20 +13,30 @@ import java.util.Locale;
  */
 public class MainActivity extends ActionBarActivity {
 
+    int quantity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        display(0);
     }
 
     /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int numberOfCoffees = 2;
-        int quantity = 5;
-        display(numberOfCoffees);
-        displayPrice(numberOfCoffees * quantity);
+        displayPrice(quantity * 5);
+    }
+
+    public void increment(View view) {
+        quantity = quantity + 1;
+        display(quantity);
+    }
+
+    public void decrement(View view) {
+        quantity = quantity - 1;
+        display(quantity);
     }
 
     /**
